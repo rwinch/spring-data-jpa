@@ -46,8 +46,7 @@ public enum LockModeRepositoryPostProcessor implements RepositoryProxyPostProces
 	 * (non-Javadoc)
 	 * @see org.springframework.data.repository.core.support.RepositoryProxyPostProcessor#postProcess(org.springframework.aop.framework.ProxyFactory, org.springframework.data.repository.core.RepositoryInformation)
 	 */
-	@Override
-	public void postProcess(ProxyFactory factory, RepositoryInformation repositoryInformation) {
+	public void postProcess(ProxyFactory factory) {
 
 		factory.addAdvice(ExposeInvocationInterceptor.INSTANCE);
 		factory.addAdvice(LockModePopulatingMethodIntercceptor.INSTANCE);
